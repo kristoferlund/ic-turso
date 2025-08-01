@@ -3,29 +3,29 @@
 [workspace]
 resolver = "2"
 members = [
-    "bindings/dart/rust",
-    "bindings/go",
-    "bindings/java",
-    "bindings/javascript",
-    "bindings/python",
-    "bindings/rust",
-    "cli",
-    "core",
-    "extensions/completion",
-    "extensions/core",
-    "extensions/crypto",
-    "extensions/csv",
-    "extensions/ipaddr",
-    "extensions/percentile",
-    "extensions/regexp",
-    "extensions/tests",
-    "macros",
-    "simulator",
-    "sqlite3",
-    "stress",
-    "testing/sqlite_test_ext",
-    "tests",
-    "vendored/sqlite3-parser/sqlparser_bench",
+  "bindings/dart/rust",
+  "bindings/go",
+  "bindings/java",
+  "bindings/javascript",
+  "bindings/python",
+  "bindings/rust",
+  "cli",
+  "core",
+  "extensions/completion",
+  "extensions/core",
+  "extensions/crypto",
+  "extensions/csv",
+  "extensions/ipaddr",
+  "extensions/percentile",
+  "extensions/regexp",
+  "extensions/tests",
+  "macros",
+  "simulator",
+  "sqlite3",
+  "stress",
+  "testing/sqlite_test_ext",
+  "tests",
+  "vendored/sqlite3-parser/sqlparser_bench",
 ]
 exclude = ["perf/latency/limbo"]
 
@@ -54,6 +54,7 @@ strum_macros = "0.26"
 serde = "1.0"
 serde_json = "1.0"
 anyhow = "1.0.98"
+ic-cdk = "0.18.5"
 
 [profile.release]
 debug = "line-tables-only"

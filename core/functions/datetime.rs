@@ -56,7 +56,8 @@ fn exec_datetime(values: &[Register], output_type: DateTimeOutput) -> Value {
         modify_dt(&mut dt, &values[1..], output_type)
     } else {
         // if the first argument is NOT a valid date/time, treat the entire set of values as modifiers.
-        let mut dt = chrono::Local::now().to_utc().naive_utc();
+        let timestamp = ic_cdk::api::time() as i64;
+        let mut dt = DateTime::from_timestamp_nanos(timestamp).naive_utc();
         modify_dt(&mut dt, values, output_type)
     }
 }
@@ -386,7 +387,8 @@ fn get_date_time_from_time_value_string(value: &str) -> Option<NaiveDateTime> {
 
     // Check for 'now'
     if value.trim().eq_ignore_ascii_case("now") {
-        return Some(chrono::Local::now().to_utc().naive_utc());
+        let timestamp = ic_cdk::api::time() as i64;
+        return Some(DateTime::from_timestamp_nanos(timestamp).naive_utc());
     }
 
     // Check for Julian day number (integer or float)
